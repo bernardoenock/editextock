@@ -1,0 +1,58 @@
+{
+  "name": "editextock",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tiptap/extension-color": "^2.2.3",
+    "@tiptap/extension-highlight": "^2.2.3",
+    "@tiptap/extension-image": "^2.2.3",
+    "@tiptap/extension-text-align": "^2.2.3",
+    "@tiptap/extension-text-style": "^2.2.3",
+    "@tiptap/extension-typography": "^2.2.3",
+    "@tiptap/pm": "^2.2.3",
+    "@tiptap/react": "^2.2.3",
+    "@tiptap/starter-kit": "^2.2.3",
+    "next": "^14.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "zustand": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.1.0",
+    "typescript": "^5.0.0"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernardoenock/editextock.git"
+  },
+  "keywords": [
+    "editextock",
+    "editor",
+    "texto",
+    "react",
+    "next",
+    "tiptap"
+  ],
+  "author": "Enock <enockltda@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bernardoenock/editextock/issues"
+  },
+  "homepage": "https://github.com/bernardoenock/editextock#readme"
+}
