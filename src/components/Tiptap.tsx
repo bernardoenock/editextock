@@ -14,12 +14,12 @@ import StarterKit from '@tiptap/starter-kit'
 import LineMenu from './Menus/LineMenu'
 import SelectedMenu from './Menus/SelectedMenu'
 import TextAlignBtn from './Btns/TextAlignBtn'
-import TextColorBtn from './Btns/TextColorBtn'
+import ColorBtn from './Btns/ColorBtn'
+import HighlightBtn from './Btns/HighlightBtn'
 
 export default () => {
   const [isEditable, setIsEditable] = useState(true)
   const [content, setContent] = useState<any>()
-  const [textHighlightColor, setTextHighlightColor] = useState<string>('#000000'); 
 
   const editor = useEditor({
     extensions: [
@@ -83,16 +83,6 @@ export default () => {
     console.log("Vai para API: ", JSON.stringify(content))
   }
 
-  const handleToggleHighlight = (color: string | null = null) => {
-    if (editor) {
-      if (color) {
-        editor.chain().focus().toggleHighlight({ color }).run();
-      } else {
-        editor.chain().focus().toggleHighlight().run();
-      }
-    }
-  }
-
   useEffect(() => {
     if (editor) {
       editor.setEditable(isEditable)
@@ -117,20 +107,9 @@ export default () => {
         <button onClick={addImage}>setImage</button>
       </div>
 
-      <TextColorBtn editor={editor} />
+      <ColorBtn editor={editor} />
 
-      <div>
-        <label>Marcar Texto</label>
-        <input
-          type="color"
-          onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
-            setTextHighlightColor(event.target.value);
-            handleToggleHighlight(event.target.value)
-          }}
-          value={textHighlightColor}
-          data-testid="setHighlight"
-        />
-      </div>
+      <HighlightBtn editor={editor} />
       <div>
         <button
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
@@ -157,47 +136,6 @@ export default () => {
           liftListItem
         </button>
       </div>
-      <button
-        onClick={() => handleToggleHighlight('orange')}
-        className={editor.isActive('highlight', { color: 'orange' }) ? 'is-active' : ''}
-      >
-        orange
-      </button>
-
-      <button
-        onClick={() => handleToggleHighlight('green')}
-        className={editor.isActive('highlight', { color: 'green' }) ? 'is-active' : ''}
-      >
-        green
-      </button>
-
-      <button
-        onClick={() => handleToggleHighlight('blue')}
-        className={editor.isActive('highlight', { color: 'blue' }) ? 'is-active' : ''}
-      >
-        blue
-      </button>
-
-      <button
-        onClick={() => handleToggleHighlight('purple')}
-        className={editor.isActive('highlight', { color: 'purple' }) ? 'is-active' : ''}
-      >
-        purple
-      </button>
-
-      <button
-        onClick={() => handleToggleHighlight('red')}
-        className={editor.isActive('highlight', { color: 'red' }) ? 'is-active' : ''}
-      >
-        red ('red')
-      </button>
-
-      <button
-        onClick={() => handleToggleHighlight('#ffa8a8')}
-        className={editor.isActive('highlight', { color: '#ffa8a8' }) ? 'is-active' : ''}
-      >
-        red (#ffa8a8)
-      </button>
 
       <div>
 
