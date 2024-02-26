@@ -2,18 +2,13 @@ import { useState } from "react";
 import { Editor } from "@tiptap/react";
 
 
-type TextColorBtnProps = {
+type ColorBtnProps = {
   editor: Editor
 }
 
 
-export default function TextColorBtn({editor}: TextColorBtnProps) {
+export default function ColorBtn({editor}: ColorBtnProps) {
   const [textColor, setTextColor] = useState<string>('#000000'); 
-
-  
-  if (!editor) {
-    return <>Editor não encontrado...</>
-  }
 
   return (
     <div>

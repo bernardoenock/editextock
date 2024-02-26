@@ -1,5 +1,8 @@
 import { BubbleMenu, Editor } from "@tiptap/react"
 import TextAlignBtn from "../Btns/TextAlignBtn"
+import BoldBtn from "../Btns/BoldBtn"
+import ItalicBtn from "../Btns/ItalicBtn"
+import StrikeBtn from "../Btns/StrikeBtn"
 
 
 
@@ -16,24 +19,14 @@ export default function SelectedMenu({editor}: SelectedMenuProps) {
 
   return (
     <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
-      <button
-        onClick={() => editor.chain().focus().toggleBold().run()}
-        className={editor.isActive('bold') ? 'is-active' : ''}
-      >
-        bold
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={editor.isActive('italic') ? 'is-active' : ''}
-      >
-        italic
-      </button>
-      <button
-        onClick={() => editor.chain().focus().toggleStrike().run()}
-        className={editor.isActive('strike') ? 'is-active' : ''}
-      >
-        strike
-      </button>
+      
+      <BoldBtn editor={editor} />
+
+      <ItalicBtn editor={editor} />
+
+      <StrikeBtn editor={editor} />
+
+      
       {/* <button onClick={() => handleToggleHighlight()} className={editor.isActive('highlight') ? 'is-active' : ''}>
         highlight
       </button> */}
