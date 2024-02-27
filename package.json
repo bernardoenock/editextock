@@ -1,7 +1,6 @@
 {
   "name": "editextock",
   "version": "0.1.0",
-  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +8,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.11",
+    "@mui/material": "^5.15.11",
     "@tiptap/extension-color": "^2.2.3",
     "@tiptap/extension-highlight": "^2.2.3",
     "@tiptap/extension-image": "^2.2.3",
