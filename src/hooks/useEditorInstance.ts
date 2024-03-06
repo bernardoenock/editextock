@@ -1,5 +1,6 @@
 import { Editor } from "@tiptap/react"
 import { create } from "zustand";
+import { editorT } from "./editorConfig";
 
 
 type EditorInstanceType = {
@@ -8,7 +9,7 @@ type EditorInstanceType = {
 }
 
 export const useEditorInstance = create<EditorInstanceType>((set) => ({
-  editor: null,
+  editor: editorT,
   setEditor: (editor: Editor) => {
     set({ editor })
   }
