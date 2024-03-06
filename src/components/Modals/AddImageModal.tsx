@@ -1,18 +1,18 @@
-import { Box, Button, Popover, Typography } from "@mui/material";
-import { Editor } from "@tiptap/react";
-import React, { useCallback, useState } from "react";
-import UploadImage from "../UploadImage";
+import { Box, Menu, MenuItem, Popover } from "@mui/material";
+import React, { useState } from "react";
 import FromURLbtn from "../Btns/Image/FromURLbtn";
 import FromFILEbtn from "../Btns/Image/FromFILEbtn";
+import { useEditorInstance } from "../../hooks/useEditorInstance";
 
 
 type AddImageModalProps = {
   anchorEl: HTMLButtonElement | null
   handleClose: () => void
-  editor: Editor | null
 }
 
-export default function AddImageModal({anchorEl, handleClose, editor}: AddImageModalProps) {
+export default function AddImageModal({anchorEl, handleClose}: AddImageModalProps) {
+  const { editor } = useEditorInstance()
+  
   const [imageUrl, setImageUrl] = useState<string>('');
 
   const open = Boolean(anchorEl);
@@ -29,26 +29,24 @@ export default function AddImageModal({anchorEl, handleClose, editor}: AddImageM
 
 
   return (
-      <Popover
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
-        }}
-      >
-        <Box sx={{m: 2}}>
-          <FromURLbtn onImageUpload={handleImageUpload}/>
-        </Box>
-        <Box sx={{m: 2}}>
-          {/* <UploadImage onImageUpload={handleImageUpload}/> */}
-          <FromFILEbtn 
-            onImageUpload={handleImageUpload} 
-            endpoint="/api/upload-image"
-          />
-        
-        </Box>
-      </Popover>
+    <Menu
+      id="basic-menu"
+      anchorEl={anchorEl}
+      open={open}
+      onClose={handleClose}
+      MenuListProps={{
+        'aria-labelledby': 'basic-button',
+      }}
+    >
+      <MenuItem onClick={handleClose}>
+        <FromURLbtn onImageUpload={handleImageUpload}/>
+      </MenuItem>
+      <MenuItem onClick={handleClose}>
+        <FromFILEbtn 
+          onImageUpload={handleImageUpload} 
+          endpoint="/api/upload-image"
+        />
+      </MenuItem>
+    </Menu>
   )
 }

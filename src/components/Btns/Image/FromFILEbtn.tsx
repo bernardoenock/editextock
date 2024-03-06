@@ -1,4 +1,3 @@
-import { Button } from '@mui/material';
 import React, { ChangeEvent } from 'react';
 
 type FromFILEbtnProps = {
@@ -51,9 +50,7 @@ export default function FromFILEbtn({ onImageUpload, endpoint }: FromFILEbtnProp
       onChange={handleImageUpload}
       style={{ display: 'none' }}
     />
-    <Button component="span" variant="contained" color="primary">
       Upload Image from File
-    </Button>
   </label>
   );
 };

@@ -15,8 +15,10 @@ export default function IconBtnWrapper({
     return (
       <Tooltip title={title}>
         <IconButton
-        sx={{borderRadius: '4px'}}
-        color="inherit"
+        sx={{
+            borderRadius: '4px', 
+          }}
+        color="primary"
         size="small"
         onClick={onClick}
         >

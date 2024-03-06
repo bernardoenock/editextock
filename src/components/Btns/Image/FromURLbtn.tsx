@@ -1,5 +1,4 @@
 import { Button, Typography } from "@mui/material"
-import { useCallback } from "react"
 
 
 type FromURLbtnProps = {
@@ -18,7 +17,7 @@ export default function FromURLbtn({ onImageUpload }: FromURLbtnProps) {
   
   return (
     <Button variant="contained" onClick={addImageByURL}>
-      <Typography sx={{ p: 2 }}>From URL</Typography>
+      <Typography sx={{ p: 2 }} >From URL</Typography>
     </Button>
   )
 }

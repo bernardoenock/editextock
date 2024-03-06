@@ -1,8 +1,8 @@
 import { BubbleMenu, Editor } from "@tiptap/react"
-import TextAlignBtn from "../Btns/TextAlignBtn"
-import BoldBtn from "../Btns/BoldBtn"
-import ItalicBtn from "../Btns/ItalicBtn"
-import StrikeBtn from "../Btns/StrikeBtn"
+import TextAlignBtn from "../Btns/Icons/TextAlignBtn"
+import BoldBtn from "../Btns/Icons/BoldBtn"
+import ItalicBtn from "../Btns/Icons/ItalicBtn"
+import StrikeBtn from "../Btns/Icons/StrikeBtn"
 
 
 
@@ -19,25 +19,26 @@ export default function SelectedMenu({editor}: SelectedMenuProps) {
 
   return (
     <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
-      
-      <BoldBtn editor={editor} />
+      <div style={{backgroundColor: "white"}}>
+        <BoldBtn />
 
-      <ItalicBtn editor={editor} />
+        <ItalicBtn />
 
-      <StrikeBtn editor={editor} />
+        <StrikeBtn />
 
-      
-      {/* <button onClick={() => handleToggleHighlight()} className={editor.isActive('highlight') ? 'is-active' : ''}>
-        highlight
-      </button> */}
+        
+        {/* <button onClick={() => handleToggleHighlight()} className={editor.isActive('highlight') ? 'is-active' : ''}>
+          highlight
+        </button> */}
 
-      <TextAlignBtn editor={editor} alignment="left" />
+        <TextAlignBtn alignment="left" />
 
-      <TextAlignBtn editor={editor} alignment="center" />
-      
-      <TextAlignBtn editor={editor} alignment="right" />
-      
-      <TextAlignBtn editor={editor} alignment="justify" />
+        <TextAlignBtn alignment="center" />
+        
+        <TextAlignBtn alignment="right" />
+        
+        <TextAlignBtn alignment="justify" />
+      </div>
     </BubbleMenu>
   )
 }
