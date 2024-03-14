@@ -1,11 +1,12 @@
-import { Button, Typography } from "@mui/material"
+import { Button, MenuItem, Typography } from "@mui/material"
 
 
 type FromURLbtnProps = {
   onImageUpload: (imageUrl: string) => void;
+  onCloseModal: () => void
 }
 
-export default function FromURLbtn({ onImageUpload }: FromURLbtnProps) {
+export default function FromURLbtn({ onImageUpload, onCloseModal }: FromURLbtnProps) {
 
   const addImageByURL = () => {
     const url = window.prompt('URL')
@@ -13,11 +14,12 @@ export default function FromURLbtn({ onImageUpload }: FromURLbtnProps) {
     if (url) {
       onImageUpload(url)
     }
+    onCloseModal()
   }
   
   return (
-    <Button variant="contained" onClick={addImageByURL}>
+    <MenuItem onClick={addImageByURL}>
       <Typography sx={{ p: 2 }} >From URL</Typography>
-    </Button>
+    </MenuItem>
   )
 }
