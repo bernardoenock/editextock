@@ -1,17 +1,26 @@
-import { Editor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import TextStyle from "@tiptap/extension-text-style";
+import { Editor } from "@tiptap/react"
+import StarterKit from "@tiptap/starter-kit"
+import Document from '@tiptap/extension-document'
+import TextStyle from "@tiptap/extension-text-style"
 import TextAlign from '@tiptap/extension-text-align'
-import Typography from "@tiptap/extension-typography";
+import Typography from "@tiptap/extension-typography"
 import ListItem from '@tiptap/extension-list-item'
 import OrderedList from '@tiptap/extension-ordered-list'
 import Highlight from '@tiptap/extension-highlight'
 import Image from '@tiptap/extension-image'
+import Placeholder from '@tiptap/extension-placeholder'
 import { Color } from '@tiptap/extension-color'
+import { useEditorInstance } from "./useEditorInstance"
+
+const CustomDocument = Document.extend({
+  content: 'heading block*',
+})
 
 export const editorT = new Editor({
     extensions: [
-      StarterKit,
+      StarterKit.configure({
+        document: false,
+      }),
       Typography,
       TextStyle,
       ListItem,
@@ -26,6 +35,16 @@ export const editorT = new Editor({
       Image.configure({
         inline: true,
         allowBase64: true,
+      }),
+      CustomDocument,
+      Placeholder.configure({
+        placeholder: ({ node }) => {
+          if (node.type.name === 'heading') {
+            return 'Qual o título?'
+          }
+
+          return 'Era uma vez...'
+        },
       }),
     ],
     content: `
@@ -52,8 +71,13 @@ export const editorT = new Editor({
       const json = editor.getJSON()
       const html = editor.getHTML()
 
-      console.log("json ---", json)
-      console.log("html ---", html)
+      useEditorInstance.getState().setContentJson(json);
+      useEditorInstance.getState().setContentHTML(html);
+
+      // console.log("json ---", json)
+      // console.log("html ---", html)
     }
   }
 )
+
+
