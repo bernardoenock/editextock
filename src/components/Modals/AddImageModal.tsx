@@ -1,9 +1,8 @@
-import { Box, Menu, MenuItem, Popover } from "@mui/material";
+import { Menu, MenuItem } from "@mui/material";
 import React, { useState } from "react";
 import FromURLbtn from "../Btns/Image/FromURLbtn";
 import FromFILEbtn from "../Btns/Image/FromFILEbtn";
 import { useEditorInstance } from "../../hooks/useEditorInstance";
-
 
 type AddImageModalProps = {
   anchorEl: HTMLButtonElement | null
@@ -17,7 +16,6 @@ export default function AddImageModal({anchorEl, handleClose}: AddImageModalProp
 
   const open = Boolean(anchorEl);
 
-
   const handleImageUpload = (url: string) => {
     setImageUrl(url);
     if (editor) {
@@ -26,7 +24,6 @@ export default function AddImageModal({anchorEl, handleClose}: AddImageModalProp
   };
 
   console.log("URL da Imagem:", imageUrl)
-
 
   return (
     <Menu
@@ -38,9 +35,8 @@ export default function AddImageModal({anchorEl, handleClose}: AddImageModalProp
         'aria-labelledby': 'basic-button',
       }}
     >
-      <MenuItem onClick={handleClose}>
-        <FromURLbtn onImageUpload={handleImageUpload}/>
-      </MenuItem>
+      <FromURLbtn onImageUpload={handleImageUpload} onCloseModal={handleClose}/>
+
       <MenuItem onClick={handleClose}>
         <FromFILEbtn 
           onImageUpload={handleImageUpload} 
