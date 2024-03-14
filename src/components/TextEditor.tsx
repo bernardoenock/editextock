@@ -9,7 +9,10 @@ import SelectedMenu from './Menus/SelectedMenu'
 // }
 
 export default function TextEditor() {
-  const { editor } = useEditorInstance()
+  const { editor, contentHTML, contentJson } = useEditorInstance()
+
+  console.log("json ---", contentJson)
+  console.log("html ---", contentHTML)
   
   if (!editor) {
     return <>Algo deu errado... -_-</>
