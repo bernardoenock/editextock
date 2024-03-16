@@ -1,4 +1,4 @@
-import { Editor } from "@tiptap/react"
+import { Content, Editor } from "@tiptap/react"
 import StarterKit from "@tiptap/starter-kit"
 import Document from '@tiptap/extension-document'
 import TextStyle from "@tiptap/extension-text-style"
@@ -10,13 +10,14 @@ import Highlight from '@tiptap/extension-highlight'
 import Image from '@tiptap/extension-image'
 import Placeholder from '@tiptap/extension-placeholder'
 import { Color } from '@tiptap/extension-color'
-import { useEditorInstance } from "./useEditorInstance"
 
 const CustomDocument = Document.extend({
   content: 'heading block*',
 })
 
-export const editorT = new Editor({
+export const editorConfig = (content?: Content) => {
+
+  return new Editor({
     extensions: [
       StarterKit.configure({
         document: false,
@@ -47,7 +48,19 @@ export const editorT = new Editor({
         },
       }),
     ],
-    content: `
+    content,
+    onUpdate: ({ editor }) => {
+      const json = editor.getJSON()
+      const html = editor.getHTML()
+      // editorInstance.setContentJson(json);
+      // editorInstance.setContentHTML(html);
+    }
+  });
+}
+
+
+/**
+ 
       <p><strong>Qual seria o superpoder mais útil para um panda?</strong></p>
       <p style="width: 20px; height:20px;">
         <img src="https://cdn.pixabay.com/photo/2022/12/19/13/31/panda-7665674_640.jpg"> 
@@ -66,18 +79,4 @@ export const editorT = new Editor({
           <p style="text-align: start">Ler mentes para entender por que os humanos estão tão obcecados com eles.</p>
         </li>
       </ol>
-    `,
-    onUpdate: ({ editor }) => {
-      const json = editor.getJSON()
-      const html = editor.getHTML()
-
-      useEditorInstance.getState().setContentJson(json);
-      useEditorInstance.getState().setContentHTML(html);
-
-      // console.log("json ---", json)
-      // console.log("html ---", html)
-    }
-  }
-)
-
-
+ */
