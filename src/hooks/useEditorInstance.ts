@@ -1,27 +1,33 @@
-import { Editor } from "@tiptap/react";
+import { Content, Editor } from "@tiptap/react";
 import { create } from "zustand";
-import { editorT } from "./editorConfig";
+import { editorConfig } from "./editorConfig";
 
 type EditorInstanceType = {
   editor: Editor | null;
-  setEditor: (editor: Editor) => void;
-  setContentHTML: (contentHTML: string) => void;
-  contentHTML: string;
-  setContentJson: (contentJson: object) => void;
-  contentJson: object;
+  setEditor: (content?: Content) => void;
+  setContentHTML: (editor: Editor) => void;
+  contentHTML?: string;
+  setContentJson: (editor: Editor) => void;
+  contentJson?: object;
+  content: Content | undefined
+  setContent: (content: Content | undefined) => void
 };
 
 export const useEditorInstance = create<EditorInstanceType>((set) => ({
-  editor: editorT,
-  contentHTML: editorT.getHTML(),
-  contentJson: editorT.getJSON(),
-  setEditor: (editor: Editor) => {
-    set({ editor });
+  editor: null,
+  contentHTML: undefined,
+  contentJson: undefined,
+  content: undefined,
+  setEditor: (content?: Content) => {
+    set({ editor: content ? editorConfig(content) : null });
   },
-  setContentHTML: (contentHTML: string) => {
-    set({ contentHTML });
+  setContentHTML: (editor) => {
+    set({ contentHTML: editor.getHTML() });
   },
-  setContentJson: (contentJson: object) => {
-    set({ contentJson });
+  setContentJson: (editor) => {
+    set({ contentJson: editor.getJSON() });
   },
+  setContent: (content: Content | undefined) => {
+    set({ content });
+  }
 }));
