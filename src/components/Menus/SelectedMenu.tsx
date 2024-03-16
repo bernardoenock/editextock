@@ -1,10 +1,6 @@
 import { BubbleMenu, Editor } from "@tiptap/react"
-import TextAlignBtn from "../Btns/Icons/TextAlignBtn"
-import BoldBtn from "../Btns/Icons/BoldBtn"
-import ItalicBtn from "../Btns/Icons/ItalicBtn"
-import StrikeBtn from "../Btns/Icons/StrikeBtn"
-
-
+import { Box } from "@mui/material"
+import ItensMenu from "./Itens/ItensMenu"
 
 type SelectedMenuProps = {
   editor: Editor
@@ -13,32 +9,22 @@ type SelectedMenuProps = {
 export default function SelectedMenu({editor}: SelectedMenuProps) {
   
   if (!editor) {
-    return <>Editor não encontrado...</>
+    return
   }
-
 
   return (
     <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
-      <div style={{backgroundColor: "white"}}>
-        <BoldBtn />
-
-        <ItalicBtn />
-
-        <StrikeBtn />
-
-        
-        {/* <button onClick={() => handleToggleHighlight()} className={editor.isActive('highlight') ? 'is-active' : ''}>
-          highlight
-        </button> */}
-
-        <TextAlignBtn alignment="left" />
-
-        <TextAlignBtn alignment="center" />
-        
-        <TextAlignBtn alignment="right" />
-        
-        <TextAlignBtn alignment="justify" />
-      </div>
+      <Box 
+        sx={{
+          backgroundColor: "#fff", 
+          borderRadius: '6px', 
+          width: "27em",
+          '@media screen and (max-width: 600px)': {
+            width: "100%"
+          }
+        }}>
+        <ItensMenu />
+      </Box>
     </BubbleMenu>
   )
 }

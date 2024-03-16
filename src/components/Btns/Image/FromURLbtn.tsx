@@ -1,6 +1,5 @@
 import { Button, MenuItem, Typography } from "@mui/material"
 
-
 type FromURLbtnProps = {
   onImageUpload: (imageUrl: string) => void;
   onCloseModal: () => void
@@ -19,7 +18,7 @@ export default function FromURLbtn({ onImageUpload, onCloseModal }: FromURLbtnPr
   
   return (
     <MenuItem onClick={addImageByURL}>
-      <Typography sx={{ p: 2 }} >From URL</Typography>
+      <Typography>From URL</Typography>
     </MenuItem>
   )
 }

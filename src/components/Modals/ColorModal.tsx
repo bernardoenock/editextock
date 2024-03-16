@@ -1,5 +1,5 @@
 import { Box, Popover } from "@mui/material";
-import ColorBtn from "../Btns/ColorBtn";
+import ColorCirclesPicker from "../Btns/ColorCirclesPicker";
 import ColorBallPicker from "../Btns/ColorBallPicker";
 
 type ColorModalProps = {
@@ -29,7 +29,7 @@ export default function ColorModal ({anchorEl, colorValue, handleClose, handleCo
         />
       </Box>
       <Box sx={{m: 2}} >
-        <ColorBtn 
+        <ColorCirclesPicker 
           colorValue={colorValue} 
           handleColor={handleColor}
         />

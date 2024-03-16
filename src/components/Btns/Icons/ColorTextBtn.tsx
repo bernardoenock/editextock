@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
+import { useEditorInstance } from '../../../hooks/useEditorInstance';
 import IconBtnWrapper from '../../Wrappers/IconBtnWrapper';
 import ColorModal from '../../Modals/ColorModal';
-import { useEditorInstance } from '../../../hooks/useEditorInstance';
 
 export default function ColorTextBtn() {
   const { editor } = useEditorInstance()

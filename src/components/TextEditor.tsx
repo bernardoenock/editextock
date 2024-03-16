@@ -3,21 +3,12 @@ import { EditorContent } from '@tiptap/react'
 import { Box } from '@mui/material'
 import { useEditorInstance } from '../hooks/useEditorInstance'
 import SelectedMenu from './Menus/SelectedMenu'
-
-// type TextEditorProps = {
-//   editor: Editor | null
-// }
+import LineMenu from './Menus/LineMenu'
 
 export default function TextEditor() {
-  const { editor, contentHTML, contentJson } = useEditorInstance()
-
-  console.log("json ---", contentJson)
-  console.log("html ---", contentHTML)
+  const { editor } = useEditorInstance()
   
-  if (!editor) {
-    return <>Algo deu errado... -_-</>
-  }
-
+  if (editor)
 
   return (
     <Box component="section" sx={{
@@ -34,6 +25,7 @@ export default function TextEditor() {
     }}>
         <EditorContent editor={editor} />
         <SelectedMenu editor={editor}/>
+        <LineMenu editor={editor} />
     </Box>
   )
 }
