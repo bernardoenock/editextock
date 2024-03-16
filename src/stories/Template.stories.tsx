@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Template } from '../components'
+import Template from '../components/Template'
 
 const meta = {
   title: 'Example/Template',
