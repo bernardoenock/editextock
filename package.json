@@ -1,6 +1,6 @@
 {
   "name": "editextock",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "This is a Text Editor.",
   "author": "Enock",
   "private": false,
@@ -55,8 +55,7 @@
     "rollup": "^2.79.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-typescript2": "^0.35.0",
-    "zustand": "^4.5.1"
+    "rollup-plugin-typescript2": "^0.35.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.17",
