@@ -8,7 +8,7 @@ type SetContentExampleProps = {
 }
 
 export default function SetContentExample({ contentEx }: SetContentExampleProps) {
-  const { content, setContent, setEditor, editor } = useEditorInstance()
+  const { content, setContent, setEditorContent, editor } = useEditorInstance()
 
   useEffect(()=> {
     if (!contentEx){
@@ -40,7 +40,7 @@ export default function SetContentExample({ contentEx }: SetContentExampleProps)
 
 
   const handleContent = () => {
-    !editor ? setEditor(content) : setEditor()
+    !editor ? setEditorContent(content) : setEditorContent()
   }
 
   return (
