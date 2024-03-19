@@ -1,4 +1,4 @@
-import { useEditorInstance } from "./hooks/useEditorInstance";
+import {useEditorInstance, EditorProvider} from "./hooks/useEditorInstance";
 
 import HeaderMenu from "./components/Menus/HeaderMenu";
 import LineMenu from "./components/Menus/LineMenu";
@@ -7,6 +7,7 @@ import TextEditor from "./components/TextEditor";
 import Template from "./components/Template";
 
 export { 
+  EditorProvider,
   useEditorInstance, 
   HeaderMenu,
   LineMenu,
