@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Template from '../components/Template'
+import { EditorProvider } from '../hooks/useEditorInstance'
+import Template from '../components/Template';
+import React from 'react';
 
 const meta = {
   title: 'Example/Template',
@@ -15,5 +17,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const TemplateInitial: Story = {
+  render: () => (
+    <EditorProvider>
+      <Template />
+    </EditorProvider>
+  ),
+};
 
-export const TemplateInitial: Story = {};
