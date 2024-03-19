@@ -1,4 +1,5 @@
 import { useEditorInstance, EditorProvider } from "./hooks/useEditorInstance";
+import { ThemeEditextock } from "./hooks/useTheme";
 
 import HeaderMenu from "./components/Menus/HeaderMenu";
 import LineMenu from "./components/Menus/LineMenu";
@@ -9,6 +10,7 @@ import Template from "./components/Template";
 export { 
   useEditorInstance, 
   EditorProvider,
+  ThemeEditextock,
   HeaderMenu,
   LineMenu,
   SelectedMenu,
