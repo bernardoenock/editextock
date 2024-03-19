@@ -1,10 +1,10 @@
 import { IconButton, Tooltip } from "@mui/material"
-import { MouseEventHandler, ReactNode } from "react"
+import { MouseEventHandler } from "react"
 
 type IconBtnWrapperProps = {
-  title: string
+  title: React.ReactNode
   onClick: MouseEventHandler<HTMLButtonElement>
-  children: ReactNode
+  children: React.ReactElement<any, any>
 }
 
 export default function IconBtnWrapper({ 
