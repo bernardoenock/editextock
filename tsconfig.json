@@ -19,20 +19,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "declaration": true,
-    "declarationDir": "dist",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "declarationDir": "dist"
   },
-  "include": [
-    "src",
-    ".next/types/**/*.ts"
-  ],
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "src/stories"

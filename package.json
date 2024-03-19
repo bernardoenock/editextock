@@ -11,10 +11,10 @@
     "dist"
   ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "",
+    "build": "",
+    "start": "",
+    "lint": "",
     "build-publish": "rollup -c",
     "dev:docs": "storybook dev -p 6006",
     "build-storybook": "storybook build"
