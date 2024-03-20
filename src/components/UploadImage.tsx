@@ -1,20 +1,20 @@
-import { Button } from '@mui/material';
-import React, { ChangeEvent } from 'react';
+import { Button } from '@mui/material'
+import { ChangeEvent } from 'react'
 
 type UploadImageProps = {
-  onImageUpload: (imageUrl: string) => void;
-};
+  onImageUpload: (imageUrl: string) => void
+}
 
 export default function UploadImage({ onImageUpload }: UploadImageProps) {
   const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const file = e.target.files?.[0]
+    if (!file) return
 
-    const reader = new FileReader();
+    const reader = new FileReader()
 
     reader.onloadend = async () => {
-      const base64String = reader.result?.toString().split(',')[1];
-      if (!base64String) return;
+      const base64String = reader.result?.toString().split(',')[1]
+      if (!base64String) return
 
       try {
         const response = await fetch('/api/upload-image', {
@@ -23,36 +23,36 @@ export default function UploadImage({ onImageUpload }: UploadImageProps) {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({ image: base64String }),
-        });
+        })
 
         if (response.ok) {
-          const data = await response.json();
-          onImageUpload(data.imageUrl);
+          const data = await response.json()
+          onImageUpload(data.imageUrl)
         } else {
-          console.error('Erro ao enviar imagem');
+          console.error('Erro ao enviar imagem')
         }
       } catch (error) {
-        console.error('Erro ao enviar imagem:', error);
+        console.error('Erro ao enviar imagem:', error)
       }
-    };
+    }
 
     if (file) {
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(file)
     }
-  };
+  }
 
   return (
-    <label htmlFor="upload-button">
+    <label htmlFor='upload-button'>
     <input
-      id="upload-button"
-      type="file"
-      accept="image/*"
+      id='upload-button'
+      type='file'
+      accept='image/*'
       onChange={handleImageUpload}
       style={{ display: 'none' }}
     />
-    <Button component="span" variant="contained" color="primary">
+    <Button component='span' variant='contained' color='primary'>
       Upload Image from File
     </Button>
   </label>
-  );
-};
+  )
+}

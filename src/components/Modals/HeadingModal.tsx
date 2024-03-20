@@ -1,5 +1,5 @@
-import { Menu, MenuItem } from "@mui/material"
-import SetHeadingBtn from "../Btns/SetHeadingBtn"
+import { Menu, MenuItem } from '@mui/material'
+import SetHeadingBtn from '../Btns/SetHeadingBtn'
 
 type HeadingModalProps = {
   anchorEl: HTMLButtonElement | null

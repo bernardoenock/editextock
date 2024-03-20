@@ -1,9 +1,9 @@
-import { Theme, ThemeOptions, ThemeProvider, createTheme } from "@mui/material";
-import { ReactNode } from "react";
+import { Theme, ThemeProvider, createTheme } from '@mui/material'
+import { ReactNode } from 'react'
 
 export const darkTheme: Theme = createTheme({
   palette: {
-    mode: `dark`
+    mode: 'dark'
   }
 })
 

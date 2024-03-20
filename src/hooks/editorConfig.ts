@@ -1,9 +1,9 @@
-import { Content, Editor } from "@tiptap/react"
-import StarterKit from "@tiptap/starter-kit"
+import { Content, Editor } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
 import Document from '@tiptap/extension-document'
-import TextStyle from "@tiptap/extension-text-style"
+import TextStyle from '@tiptap/extension-text-style'
 import TextAlign from '@tiptap/extension-text-align'
-import Typography from "@tiptap/extension-typography"
+import Typography from '@tiptap/extension-typography'
 import ListItem from '@tiptap/extension-list-item'
 import OrderedList from '@tiptap/extension-ordered-list'
 import Highlight from '@tiptap/extension-highlight'
@@ -49,34 +49,9 @@ export const editorConfig = (content?: Content) => {
       }),
     ],
     content,
-    onUpdate: ({ editor }) => {
-      const json = editor.getJSON()
-      const html = editor.getHTML()
-      // editorInstance.setContentJson(json);
-      // editorInstance.setContentHTML(html);
-    }
-  });
+    // onUpdate: ({ editor }) => {
+    //   const json = editor.getJSON()
+    //   const html = editor.getHTML()
+    // }
+  })
 }
-
-
-/**
- 
-      <p><strong>Qual seria o superpoder mais útil para um panda?</strong></p>
-      <p style="width: 20px; height:20px;">
-        <img src="https://cdn.pixabay.com/photo/2022/12/19/13/31/panda-7665674_640.jpg"> 
-      </p>
-      <ol>
-        <li>
-          <p style="text-align: start">Capacidade de voar e evitar obstáculos enquanto come bambu no topo das árvores.</p>
-        </li>
-        <li>
-          <p style="text-align: start">Invisibilidade para se esgueirar furtivamente em meio à floresta de bambu sem ser notado.</p>
-        </li>
-        <li>
-          <p style="text-align: start">Teletransporte para escapar rapidamente dos pandas irritantes que tentam roubar seu lanche.</p>
-        </li>
-        <li>
-          <p style="text-align: start">Ler mentes para entender por que os humanos estão tão obcecados com eles.</p>
-        </li>
-      </ol>
- */

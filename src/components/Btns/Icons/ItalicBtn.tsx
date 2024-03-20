@@ -1,6 +1,6 @@
-import { useEditorInstance } from "../../../hooks/useEditorInstance";
-import IconBtnWrapper from "../../Wrappers/IconBtnWrapper"
-import FormatItalicIcon from '@mui/icons-material/FormatItalic';
+import { useEditorInstance } from '../../../hooks/useEditorInstance'
+import IconBtnWrapper from '../../Wrappers/IconBtnWrapper'
+import FormatItalicIcon from '@mui/icons-material/FormatItalic'
 
 export default function ItalicBtn() {
   const { editor } = useEditorInstance()
@@ -12,7 +12,7 @@ export default function ItalicBtn() {
 
   return (
     <IconBtnWrapper
-      title="Italic"
+      title='Italic'
       onClick={handleItalic}
     >
       <FormatItalicIcon />

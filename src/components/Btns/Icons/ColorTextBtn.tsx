@@ -1,33 +1,33 @@
-import React, { useState } from 'react';
-import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
-import { useEditorInstance } from '../../../hooks/useEditorInstance';
-import IconBtnWrapper from '../../Wrappers/IconBtnWrapper';
-import ColorModal from '../../Modals/ColorModal';
+import React, { useState } from 'react'
+import FormatColorTextIcon from '@mui/icons-material/FormatColorText'
+import { useEditorInstance } from '../../../hooks/useEditorInstance'
+import IconBtnWrapper from '../../Wrappers/IconBtnWrapper'
+import ColorModal from '../../Modals/ColorModal'
 
 export default function ColorTextBtn() {
   const { editor } = useEditorInstance()
 
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
-  const [colorTextValue, setColorTextValue] = useState<string>('#000000'); 
+  const [colorTextValue, setColorTextValue] = useState<string>('#000000') 
 
   const handleCloseColorModal = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   const handleOpenColorModal = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
 
   const handleColorText = (color: any | null = null) => {
     if(editor) {
       if(typeof color != 'string') { 
         setColorTextValue(color.hex)
-        editor.chain().focus().setColor(color.hex).run();
+        editor.chain().focus().setColor(color.hex).run()
       } else if (typeof color == 'string'){ 
         setColorTextValue(color)
-        editor.chain().focus().setColor(color).run();
+        editor.chain().focus().setColor(color).run()
       } else {
-        editor.chain().focus().setColor(colorTextValue).run();
+        editor.chain().focus().setColor(colorTextValue).run()
       }
     }
   }

@@ -1,19 +1,19 @@
-import TitleIcon from '@mui/icons-material/Title';
-import { useState } from "react";
-import IconBtnWrapper from '../../Wrappers/IconBtnWrapper';
-import HeadingModal from '../../Modals/HeadingModal';
+import TitleIcon from '@mui/icons-material/Title'
+import { useState } from "react"
+import IconBtnWrapper from '../../Wrappers/IconBtnWrapper'
+import HeadingModal from '../../Modals/HeadingModal'
 
 
 export default function HeadingBtn() {
-  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
   
   const handleCloseHeadingModal = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   const handleOpenHeadingModal = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
 
   return (
     <>
@@ -27,5 +27,5 @@ export default function HeadingBtn() {
         handleClose={handleCloseHeadingModal}
       />
     </>
-  );
+  )
 }

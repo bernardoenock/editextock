@@ -23,21 +23,21 @@ export default function ColorBallPicker({colorValue, handleColor}: ColorBallPick
         `}
       </style>
       <input
-        type="color"
+        type='color'
         onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
           handleColor(event.target.value);
         }}
         value={colorValue}
-        data-testid="setHighlight"
+        data-testid='setHighlight'
         style={{
-          WebkitAppearance: "none",
-          MozAppearance: "none",
-          appearance: "none",
-          backgroundColor: "transparent",
-          width: "35px",
-          height: "38px",
-          border: "none",
-          cursor: "pointer",
+          WebkitAppearance: 'none',
+          MozAppearance: 'none',
+          appearance: 'none',
+          backgroundColor: 'transparent',
+          width: '35px',
+          height: '38px',
+          border: 'none',
+          cursor: 'pointer',
           margin: 0,
           padding: 0
         }}

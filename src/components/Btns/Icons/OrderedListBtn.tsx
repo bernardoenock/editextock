@@ -1,6 +1,6 @@
-import { useEditorInstance } from "../../../hooks/useEditorInstance"
-import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
-import IconBtnWrapper from "../../Wrappers/IconBtnWrapper";
+import { useEditorInstance } from '../../../hooks/useEditorInstance'
+import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered'
+import IconBtnWrapper from '../../Wrappers/IconBtnWrapper'
 
 export default function OrderedListBtn() {
   const { editor } = useEditorInstance()
@@ -12,7 +12,7 @@ export default function OrderedListBtn() {
 
   return (
     <IconBtnWrapper
-      title="Lista numerada"
+      title='Lista numerada'
       onClick={handleOrderedList}
     >
       <FormatListNumberedIcon />

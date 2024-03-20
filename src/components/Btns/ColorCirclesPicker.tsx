@@ -1,4 +1,4 @@
-import { CirclePicker } from 'react-color';
+import { CirclePicker } from 'react-color'
 
 type ColorCirclesPickerProps = {
   handleColor: (color?: any | null) => void

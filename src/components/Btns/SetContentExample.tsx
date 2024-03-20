@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { Button } from "@mui/material";
-import { Content } from "@tiptap/react";
-import { useEditorInstance } from "../../hooks/useEditorInstance";
+import { useEffect } from 'react'
+import { Button } from '@mui/material'
+import { Content } from '@tiptap/react'
+import { useEditorInstance } from '../../hooks/useEditorInstance'
 
 type SetContentExampleProps = {
   contentEx?: Content
@@ -37,14 +37,12 @@ export default function SetContentExample({ contentEx }: SetContentExampleProps)
     }
   }, [])
   
-
-
   const handleContent = () => {
     !editor ? setEditorContent(content) : setEditorContent()
   }
 
   return (
-    <Button variant="contained" onClick={handleContent}>
+    <Button variant='contained' onClick={handleContent}>
       Content Example
     </Button>
   )

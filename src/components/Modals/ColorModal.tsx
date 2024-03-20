@@ -1,6 +1,6 @@
-import { Box, Popover } from "@mui/material";
-import ColorCirclesPicker from "../Btns/ColorCirclesPicker";
-import ColorBallPicker from "../Btns/ColorBallPicker";
+import { Box, Popover } from '@mui/material'
+import ColorCirclesPicker from '../Btns/ColorCirclesPicker'
+import ColorBallPicker from '../Btns/ColorBallPicker'
 
 type ColorModalProps = {
   anchorEl: HTMLButtonElement | null
@@ -22,7 +22,7 @@ export default function ColorModal ({anchorEl, colorValue, handleClose, handleCo
         horizontal: 'center',
       }}
     >
-      <Box sx={{mt: 2, width: "100%", display: "flex", justifyContent: "center"}} >
+      <Box sx={{mt: 2, width: '100%', display: 'flex', justifyContent: 'center'}} >
         <ColorBallPicker 
           colorValue={colorValue} 
           handleColor={handleColor} 

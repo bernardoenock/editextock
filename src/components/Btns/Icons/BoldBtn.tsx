@@ -1,6 +1,6 @@
-import FormatBoldIcon from '@mui/icons-material/FormatBold';
-import { useEditorInstance } from "../../../hooks/useEditorInstance"
-import IconBtnWrapper from "../../Wrappers/IconBtnWrapper"
+import FormatBoldIcon from '@mui/icons-material/FormatBold'
+import { useEditorInstance } from '../../../hooks/useEditorInstance'
+import IconBtnWrapper from '../../Wrappers/IconBtnWrapper'
 
 export default function BoldBtn() {
   const { editor } = useEditorInstance()
@@ -12,7 +12,7 @@ export default function BoldBtn() {
 
   return (
     <IconBtnWrapper
-      title="Bold"
+      title='Bold'
       onClick={handleBold}
     >
       <FormatBoldIcon />

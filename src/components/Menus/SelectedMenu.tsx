@@ -1,6 +1,6 @@
-import { BubbleMenu, Editor } from "@tiptap/react"
-import { Box } from "@mui/material"
-import ItensMenu from "./Itens/ItensMenu"
+import { BubbleMenu, Editor } from '@tiptap/react'
+import { Box } from '@mui/material'
+import ItensMenu from './Itens/ItensMenu'
 
 type SelectedMenuProps = {
   editor: Editor
@@ -16,11 +16,11 @@ export default function SelectedMenu({editor}: SelectedMenuProps) {
     <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
       <Box 
         sx={{
-          backgroundColor: "#fff", 
+          backgroundColor: '#fff', 
           borderRadius: '6px', 
-          width: "27em",
+          width: '27em',
           '@media screen and (max-width: 600px)': {
-            width: "100%"
+            width: '100%'
           }
         }}>
         <ItensMenu />

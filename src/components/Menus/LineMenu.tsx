@@ -1,6 +1,6 @@
-import { Editor, FloatingMenu } from "@tiptap/react"
-import { Toolbar } from "@mui/material"
-import ItensMenu from "./Itens/ItensMenu"
+import { Editor, FloatingMenu } from '@tiptap/react'
+import { Toolbar } from '@mui/material'
+import ItensMenu from './Itens/ItensMenu'
 
 type LineMenuProps = {
   editor: Editor

@@ -1,5 +1,5 @@
-import { IconButton, Tooltip } from "@mui/material"
-import { MouseEventHandler } from "react"
+import { IconButton, Tooltip } from '@mui/material'
+import { MouseEventHandler } from 'react'
 
 type IconBtnWrapperProps = {
   title: React.ReactNode
@@ -18,8 +18,8 @@ export default function IconBtnWrapper({
         sx={{
             borderRadius: '4px', 
           }}
-        color="primary"
-        size="small"
+        color='primary'
+        size='small'
         onClick={onClick}
         >
 

@@ -1,8 +1,8 @@
-import { Menu, MenuItem } from "@mui/material";
-import React, { useState } from "react";
-import FromURLbtn from "../Btns/Image/FromURLbtn";
-import FromFILEbtn from "../Btns/Image/FromFILEbtn";
-import { useEditorInstance } from "../../hooks/useEditorInstance";
+import { Menu, MenuItem } from '@mui/material'
+import { useState } from 'react'
+import FromURLbtn from '../Btns/Image/FromURLbtn'
+import FromFILEbtn from '../Btns/Image/FromFILEbtn'
+import { useEditorInstance } from '../../hooks/useEditorInstance'
 
 type AddImageModalProps = {
   anchorEl: HTMLButtonElement | null
@@ -12,22 +12,22 @@ type AddImageModalProps = {
 export default function AddImageModal({anchorEl, handleClose}: AddImageModalProps) {
   const { editor } = useEditorInstance()
   
-  const [imageUrl, setImageUrl] = useState<string>('');
+  const [imageUrl, setImageUrl] = useState<string>('')
 
-  const open = Boolean(anchorEl);
+  const open = Boolean(anchorEl)
 
   const handleImageUpload = (url: string) => {
-    setImageUrl(url);
+    setImageUrl(url)
     if (editor) {
-      editor.chain().focus().setImage({ src: url }).run();
+      editor.chain().focus().setImage({ src: url }).run()
     }
-  };
+  }
 
-  console.log("URL da Imagem:", imageUrl)
+  console.log('URL da Imagem:', imageUrl)
 
   return (
     <Menu
-      id="basic-menu"
+      id='basic-menu'
       anchorEl={anchorEl}
       open={open}
       onClose={handleClose}
@@ -40,7 +40,7 @@ export default function AddImageModal({anchorEl, handleClose}: AddImageModalProp
       <MenuItem onClick={handleClose}>
         <FromFILEbtn 
           onImageUpload={handleImageUpload} 
-          endpoint="/api/upload-image"
+          endpoint='/api/upload-image'
         />
       </MenuItem>
     </Menu>

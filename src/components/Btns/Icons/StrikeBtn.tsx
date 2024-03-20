@@ -1,6 +1,6 @@
-import { useEditorInstance } from "../../../hooks/useEditorInstance"
-import FormatStrikethroughIcon from '@mui/icons-material/FormatStrikethrough';
-import IconBtnWrapper from "../../Wrappers/IconBtnWrapper";
+import { useEditorInstance } from '../../../hooks/useEditorInstance'
+import FormatStrikethroughIcon from '@mui/icons-material/FormatStrikethrough'
+import IconBtnWrapper from '../../Wrappers/IconBtnWrapper'
 
 export default function StrikeBtn() {
   const { editor } = useEditorInstance()
@@ -12,7 +12,7 @@ export default function StrikeBtn() {
 
   return (
     <IconBtnWrapper
-      title="Strike"
+      title='Strike'
       onClick={handleStrike}
     >
       <FormatStrikethroughIcon />

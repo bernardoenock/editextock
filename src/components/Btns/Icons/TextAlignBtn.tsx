@@ -1,9 +1,9 @@
-import { useEditorInstance } from "../../../hooks/useEditorInstance"
-import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
-import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
-import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
-import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify';
-import IconBtnWrapper from "../../Wrappers/IconBtnWrapper"
+import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft'
+import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter'
+import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight'
+import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify'
+import { useEditorInstance } from '../../../hooks/useEditorInstance'
+import IconBtnWrapper from '../../Wrappers/IconBtnWrapper'
 
 type TextAlignBtnProps = {
   alignment: 'justify' | 'left' | 'center' | 'right'
@@ -21,7 +21,7 @@ export default function TextAlignBtn({alignment}: TextAlignBtnProps) {
     case 'left':
       return (
         <IconBtnWrapper
-          title="Alinhar à esquerda"
+          title='Alinhar à esquerda'
           onClick={handleTextAlign}
         >
           <FormatAlignLeftIcon />
@@ -30,7 +30,7 @@ export default function TextAlignBtn({alignment}: TextAlignBtnProps) {
     case 'center':
       return (
         <IconBtnWrapper
-          title="Alinhar no centro"
+          title='Alinhar no centro'
           onClick={handleTextAlign}
         >
           <FormatAlignCenterIcon />
@@ -39,7 +39,7 @@ export default function TextAlignBtn({alignment}: TextAlignBtnProps) {
     case 'right':
       return (
         <IconBtnWrapper
-          title="Alinhar à direita"
+          title='Alinhar à direita'
           onClick={handleTextAlign}
         >
           <FormatAlignRightIcon />
@@ -48,7 +48,7 @@ export default function TextAlignBtn({alignment}: TextAlignBtnProps) {
     case 'justify':
       return (
         <IconBtnWrapper
-          title="Justificar"
+          title='Justificar'
           onClick={handleTextAlign}
         >
           <FormatAlignJustifyIcon />
